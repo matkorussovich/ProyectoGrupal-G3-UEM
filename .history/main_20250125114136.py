@@ -1,11 +1,9 @@
-
 from ultralytics import YOLO
 
 #modelo = YOLO("yolo11n-pose.pt")
 modelo = YOLO("yolo11s.pt")
 
 # bajar los fps de un video a 5 fps:
-# prueba commmit 
 from moviepy import VideoFileClip
 import os
 
