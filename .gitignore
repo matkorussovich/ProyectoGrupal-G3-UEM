@@ -1,2 +1,8 @@
 venv
 videos
+.env
+modelos
+data
+grabaciones
+.vscode/
+runs/
