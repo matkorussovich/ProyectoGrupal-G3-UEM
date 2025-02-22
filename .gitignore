@@ -6,3 +6,10 @@ data
 grabaciones
 .vscode/
 runs/
+resultados_clientes_totales.csv
+resultados_deteccion_mostrador.csv
+resultados_deteccion_mostrador.xlsx
+resultados_deteccion_mostrador_con_ubicaciones.csv
+resultados_deteccion_mostrador_con_ubicaciones.xlsx
+videos camaras seleccionadas
+videos_a_etiquetar
