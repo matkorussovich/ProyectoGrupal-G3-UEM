@@ -1,0 +1,12 @@
+train: C:\Users\alvar\Desktop\Proyecto G3\ProyectoGrupal-G3-UEM\UEM-1-Camara-3\train\images
+val: C:\Users\alvar\Desktop\Proyecto G3\ProyectoGrupal-G3-UEM\UEM-1-Camara-3\valid\images
+
+nc: 2
+names: ['cliente', 'empleado']
+
+roboflow:
+  workspace: proyecto-uem
+  project: uem-1-camara
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/proyecto-uem/uem-1-camara/dataset/3
