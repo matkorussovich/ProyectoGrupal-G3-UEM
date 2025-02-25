@@ -1,7 +1,7 @@
 
 from ultralytics import YOLO
 
-modelo = YOLO("yolo11s.pt")
+modelo = YOLO(r"modelos\best.pt")
 
 
 from moviepy import VideoFileClip
@@ -52,4 +52,4 @@ fps = 1  # Nuevo valor de FPS
    
 
 #resultado = modelo.track(source="videos\\OneDrive_1_25-1-2025\\modificado\\Clientes6.mp4", show=True, save=True)
-resultado = modelo.track(source=0, show=True, save=False)
+resultado = modelo.track(source=r"grabaciones\recortes\grabacion_2025-02-20_18-38-15.mp4", show=True, save=True)
