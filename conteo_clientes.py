@@ -17,7 +17,7 @@ model = YOLO(r'modelos\best.pt', verbose=False)
 tracker = DeepSort(max_age=MAX_AGE, max_cosine_distance=0.3, max_iou_distance=0.6, n_init=5)
 
 # Obtener lista de videos MP4 en la carpeta grabaciones
-VIDEOS_PATH = r"grabaciones"
+VIDEOS_PATH = r"grabaciones\prueba-alva"
 lista_videos = [f for f in os.listdir(VIDEOS_PATH) if f.endswith('.mp4') and 'procesado' not in f]
 
 os.environ['YOLO_VERBOSE'] = 'False'  # Desactivar mensajes de depuración

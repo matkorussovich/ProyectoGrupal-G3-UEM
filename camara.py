@@ -1,5 +1,5 @@
 import requests
-import jwt
+# import jwt
 import time
 from datetime import datetime
 
@@ -34,46 +34,46 @@ class CameraManager:
         response = requests.post(self.login_url, json=payload, headers=headers)
         if response.status_code == 200:
             self.token_largo = response.json().get("data", {}).get("token")
-            self._set_token_expiration()
+            # self._set_token_expiration()
             print("✅ Autenticación exitosa.")
         else:
             raise Exception(f"❌ Error al autenticar: {response.status_code} - {response.text}")
 
-    def _set_token_expiration(self):
-        """Intenta extraer la expiración del token largo si es un JWT."""
-        if not self.token_largo:
-            print("⚠️ No hay token largo disponible.")
-            return
+    # def _set_token_expiration(self):
+    #     """Intenta extraer la expiración del token largo si es un JWT."""
+    #     if not self.token_largo:
+    #         print("⚠️ No hay token largo disponible.")
+    #         return
 
-        try:
+        # try:
             # Intenta decodificar el token para obtener la fecha de expiración
-            payload = jwt.decode(self.token_largo, options={"verify_signature": False})
-            exp_time = payload.get("exp")
+            # payload = jwt.decode(self.token_largo, options={"verify_signature": False})
+            # exp_time = payload.get("exp")
 
-            if exp_time:
-                self.token_expiration = datetime.fromtimestamp(exp_time)
-                print(f"⏳ Token largo expira en: {self.token_expiration}")
-            else:
-                print("⚠️ El token no contiene información de expiración.")
+            # if exp_time:
+            #     self.token_expiration = datetime.fromtimestamp(exp_time)
+            #     print(f"⏳ Token largo expira en: {self.token_expiration}")
+            # else:
+            #     print("⚠️ El token no contiene información de expiración.")
 
-        except jwt.DecodeError:
-            print("⚠️ No se pudo extraer la expiración del token: No es un JWT válido.")
-        except Exception as e:
-            print(f"⚠️ Error al procesar el token largo: {e}")
+        # except jwt.DecodeError:
+        #     print("⚠️ No se pudo extraer la expiración del token: No es un JWT válido.")
+        # except Exception as e:
+        #     print(f"⚠️ Error al procesar el token largo: {e}")
 
-    def _is_token_valid(self):
-        """Verifica si el token largo sigue siendo válido."""
-        if self.token_expiration is None:
-            return False
-        return time.time() < self.token_expiration.timestamp() - 60  # Se renueva 1 minuto antes de expirar
+    # def _is_token_valid(self):
+    #     """Verifica si el token largo sigue siendo válido."""
+    #     if self.token_expiration is None:
+    #         return False
+    #     return time.time() < self.token_expiration.timestamp() - 60  # Se renueva 1 minuto antes de expirar
         
 
 
     def get_streaming_link(self):
         """Obtiene el token corto y genera el link de streaming."""
-        if not self._is_token_valid():
-            print("🔄 Token largo expirado, autenticando nuevamente...")
-            self.authenticate()
+        # if not self._is_token_valid():
+        #     print("🔄 Token largo expirado, autenticando nuevamente...")
+        #     self.authenticate()
 
         headers = {
             "Accept": "application/json, text/plain, */*",
